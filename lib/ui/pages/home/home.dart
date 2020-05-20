@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/ui/pages/home/components/home_tab.dart';
+import 'package:loja_virtual/utils/custom_drawer.dart';
 
 class Home extends StatelessWidget {
-  PageController _pageController = PageController();
+  final _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       controller: _pageController,
       children: <Widget>[
-        Container(),
-        Container(),
+        Scaffold(
+          body: HomeTab(),
+          drawer: CustomDrawer(),
+        ),
       ],
     );
   }
