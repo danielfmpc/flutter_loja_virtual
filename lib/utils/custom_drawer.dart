@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/utils/drawer_tiles.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -26,16 +27,53 @@ class CustomDrawer extends StatelessWidget {
                           fontWeight: FontWeight.bold
                         ),
                       ),
-                    )
+                    ),
+                    Positioned(
+                      left: 0,
+                      bottom: 0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Olá,",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: (){
+
+                            },
+                            child: Text(
+                              "Entre ou cadastre-se =>",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-              )
+              ),
+              Divider(),
+              DrawerTile(Icons.home, "Início"),
+              DrawerTile(Icons.list, "Produtos"),
+              DrawerTile(Icons.location_on, "Lojas"),
+              DrawerTile(Icons.playlist_add_check, "Meus pedidos"),
             ],
           ),
         ],
       ),
     );
   }
+
+
+
   Widget _buildDrawerGradiente() => Container(
     decoration: BoxDecoration(
       gradient: LinearGradient(
